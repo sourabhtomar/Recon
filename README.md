@@ -12,4 +12,4 @@ This will do everything that you need to do for finding subdomains.
 
 Usage 
 
-./recon.sh <domain>
+./recon.sh domain.com
