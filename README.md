@@ -6,8 +6,10 @@ There is no rocket science in this bash script if you read the code of that file
 
 You can add some more tools in this script too.
 
-NOTE: if you face a problem with tools kindly open recon.sh file and give the specific path to those tools according to your tools directory.
+NOTE: if you face a problem with tools kindly open recon.sh file and give the specific path to those tools according to your tools.
 
-Usage -> ./recon.sh <domain>
-  
-This is do everything that you need to do for finding subdomains.
+This will do everything that you need to do for finding subdomains.
+
+Usage 
+
+./recon.sh <domain>
