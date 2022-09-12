@@ -12,4 +12,6 @@ This will do everything that you need to do for finding subdomains.
 
 Usage 
 
+chmod +x recon.sh
+
 ./recon.sh domain.com
