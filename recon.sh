@@ -16,7 +16,7 @@ findomain -t $1 -u ~/bugbounty_targets/$1/findomain_subdomains
 
 echo "Gathering subdomains from sublist3r"
 
-sublist3r -d $1 | tee ~/bugbounty_targets/$1/sublist3r_subdomains
+#sublist3r -d $1 | tee ~/bugbounty_targets/$1/sublist3r_subdomains
 
 echo "Gathering subdomains from amass"
 
