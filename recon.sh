@@ -20,14 +20,14 @@ echo "Gathering subdomains from sublist3r"
 
 echo "Gathering subdomains from amass"
 
-#amass enum --passive -d $1 | tee ~/bugbounty_targets/$1/amass_subdomains
+amass enum -d $1 | grep -oP '([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}' | tee ~/bugbounty_targets/$1/amass_subdomains
 
 echo "Gathering subdomains from crt.sh"
 
 curl -s https://crt.sh/\?q\=\%.$1\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | tee ~/bugbounty_targets/$1/crt.txt
 
 echo "Gathering subdomains from crt tool"
-bash ~/tools/crt.sh/crt.sh -d $1 | tee ~/bugbounty_targets/$1/crt2.txt
+bash ~/kali_tools/crt.sh/crtt.sh -u $1 -l 20000 | tee ~/bugbounty_targets/$1/crt2.txt
 
 cd ~/bugbounty_targets/$1
 
@@ -43,3 +43,4 @@ cat unique_subdomains.txt | httpx -silent -sc -probe -title -td -ip -t 90 -mc 20
 
 echo "Taking screenshot"
 cat alive_subdomains | aquatone -out aquatone
+
