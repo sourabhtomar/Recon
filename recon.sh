@@ -20,7 +20,7 @@ echo "Gathering subdomains from sublist3r"
 
 echo "Gathering subdomains from amass"
 
-amass enum -d $1 | grep -oP '([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}' | tee ~/bugbounty_targets/$1/amass_subdomains
+amass enum -passive -norecursive -noalts -d $1 | grep -oP '([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}' | tee ~/bugbounty_targets/$1/amass_subdomains
 
 echo "Gathering subdomains from crt.sh"
 
